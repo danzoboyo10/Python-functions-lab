@@ -22,13 +22,20 @@ print(largest([8, 11, 6, 2, 1, 9, 10, 3, 12, 7]))
   
 # 3) Write a function named occurances that takes two string arguments as input and counts the number of occurances of the second string inside the first string.
 
-def occurances(string1, string2):
-  count = 0
-  for letter in string1:
-    for letters in string2:
-      if letter == string2: count += 1
-  return count
-print(occurances('hello', 'lol'))
+def occurrences(string1, string2):
+    count = 0
+    start = 0
+    while True:
+        start = string1.find(string2, start) + 1
+        if start > 0:
+            count+=1
+        else:
+            return count
+
+print(occurrences('fleep floop', 'e'))
+    
+    
+
 
   
 
